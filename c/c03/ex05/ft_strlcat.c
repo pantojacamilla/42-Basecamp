@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clobato- <clobato-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: clobato- <clobato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 17:53:44 by clobato-          #+#    #+#             */
-/*   Updated: 2021/04/14 18:12:58 by clobato-         ###   ########.fr       */
+/*   Updated: 2021/04/16 03:20:17 by clobato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,21 @@ unsigned int	ft_strlen(char *str)
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int c;
-	unsigned int d;
+	unsigned int i;
+	unsigned int j;
 
 	if (size <= ft_strlen(dest))
 	{
 		return (size + ft_strlen(src));
 	}
-	c = ft_strlen(dest);
-	d = 0;
-	while (src[d] != '\0' && c + 1 < size)
+	j = ft_strlen(dest);
+	i = 0;
+	while (src[i] != '\0' && j + 1 < size)
 	{
-		dest[c] = src[d];
-		c++;
-		d++;
+		dest[j] = src[i];
+		j++;
+		i++;
 	}
-	dest[c] = '\0';
-	return (ft_strlen(dest) + ft_strlen(&src[d]));
+	dest[j] = '\0';
+	return (ft_strlen(dest) + ft_strlen(&src[i]));
 }
