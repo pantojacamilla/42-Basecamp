@@ -6,7 +6,7 @@
 /*   By: clobato- <clobato-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 18:24:34 by clobato-          #+#    #+#             */
-/*   Updated: 2021/04/08 14:14:05 by clobato-         ###   ########.fr       */
+/*   Updated: 2021/04/16 21:31:00 by clobato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_increment(int combn[], int n, int index)
 
 void	ft_print_combn(int n)
 {
-	int combn[n];
+	int combn[9];
 	int index;
 	int pos_index;
 
