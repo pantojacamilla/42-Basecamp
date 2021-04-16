@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clobato- <clobato-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 20:46:12 by clobato-          #+#    #+#             */
-/*   Updated: 2021/04/14 21:04:40 by clobato-         ###   ########.fr       */
+/*   Created: 2021/04/16 00:09:56 by clobato-          #+#    #+#             */
+/*   Updated: 2021/04/16 11:51:50 by clobato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int		ft_atoi(char *str)
 {
-	unsigned int i;
+	int result;
+	int sign;
+	int i;
 
+	result = 0;
+	sign = 1;
 	i = 0;
-	while ((i < n) && src[i] != '\0')
+	while ((str[i] == '\t') || (str[i] == '\v') || (str[i] == '\f') ||
+		(str[i] == '\n') || (str[i] == '\r') || (str[i] == ' '))
 	{
-		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
+	while (str[i] == '+' || str[i] == '-')
 	{
-		dest[i] = '\0';
+		if (str[i] == '-')
+			sign *= (-1);
 		i++;
 	}
-	return (dest);
+	while (str[i] != '\0' && (str[i] >= '0') && (str[i] <= '9'))
+	{
+		result = (result * 10) + str[i] - '0';
+		i++;
+	}
+	return (result * sign);
 }

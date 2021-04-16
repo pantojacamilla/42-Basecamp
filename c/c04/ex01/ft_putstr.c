@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clobato- <clobato-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 18:14:21 by clobato-          #+#    #+#             */
-/*   Updated: 2021/04/13 18:20:56 by clobato-         ###   ########.fr       */
+/*   Created: 2021/04/16 00:04:46 by clobato-          #+#    #+#             */
+/*   Updated: 2021/04/16 00:12:22 by clobato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	char *begining;
+#include <unistd.h>
 
-	begining = *&dest;
-	while (*src != '\0')
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		*dest = *src;
-		src++;
-		dest++;
+		write(1, &str[i], 1);
+		i++;
 	}
-	*dest = '\0';
-	return (begining);
 }
